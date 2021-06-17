@@ -8,23 +8,25 @@
 *
 */
 class DB {
-  // protected $servername = "localhost";
-  // protected $username = "root";
-  // protected $password = "";
-	protected static $instance;
+
+  protected static $instance;
 
 	protected function __construct() {}
 
 	public static function getInstance() {
+   $servername = "localhost";
+     $username = "root";
+     $password = "";
+     $db_name = "makeen_news";
 
 		if(empty(self::$instance)) {
 
 			$db_info = array(
-				"db_host" => "localhost",
+				"db_host" => $servername,
 				"db_port" => "3306",
-				"db_user" => "root",
-				"db_pass" => "",
-				"db_name" => "makeen_news",
+				"db_user" => $username,
+				"db_pass" => $password,
+				"db_name" => $db_name,
 				"db_charset" => "UTF-8");
 
 			try {
@@ -43,9 +45,6 @@ class DB {
 	}
 
 	public static function setCharsetEncoding() {
-		if (self::$instance == null) {
-			self::connect();
-		}
 
 		self::$instance->exec(
 			"SET NAMES 'utf8';
