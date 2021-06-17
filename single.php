@@ -44,14 +44,14 @@ require "db.php";
 
         <div class="row">
             <div class="col-12">
-                <form action="" method="post">
+                <form action="./handlers/addCommentHandler.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">comment</label>
-                        <input type="email" value="commentvalue" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter comment">
+                        <input type="text" name="commentvalue" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter comment">
 
                     </div>
 
-                    <button type="submit" value="addcomment" class="btn btn-primary">Submit</button>
+                    <button type="submit" name="addcomment" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
