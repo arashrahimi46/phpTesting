@@ -1,18 +1,10 @@
 
 <?php
-/**
-* PDO Singleton Class v.1.0
-*
-* @author Ademílson F. Tonato
-* @link https://twitter.com/ftonato
-*
-*/
 class DB {
 
   protected static $instance;
 
 	protected function __construct() {}
-
 	public static function getInstance() {
    $servername = "localhost";
      $username = "root";
