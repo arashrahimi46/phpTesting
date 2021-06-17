@@ -14,7 +14,7 @@ class DB {
 	protected function __construct() {}
 
 	public static function getInstance() {
-   $servername = "localhost";
+   	 $servername = "localhost";
      $username = "root";
      $password = "";
      $db_name = "makeen_news";
@@ -34,7 +34,8 @@ class DB {
 				self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);  
 				self::$instance->query('SET NAMES utf8');
 				self::$instance->query('SET CHARACTER SET utf8');
-        echo "okkkkkkkkkkk";
+
+        		echo "okkkkkkkkkkk";
 
 			} catch(PDOException $error) {
 				echo $error->getMessage();
