@@ -8,7 +8,14 @@ class PostRepository {
         $this->conn = DB::getInstance();
     }
 
-    public function addPost($request){
-        $sql = "INSERT INTO posts (title, body,author,image)VALUES ($request)";
+    public function addPost($post){
+        try {
+            $sql = "INSERT INTO posts (title, body,author,image)VALUES ('$post->title' , '$post->body' , '$post->author', '$post->image')";
+            $this->conn->exec($sql);
+           header("Location: http://localhost:8000");
+        }
+    catch (PDOException $e){
+            echo $e->getMessage();
+    }
     }
 }
