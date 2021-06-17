@@ -32,6 +32,19 @@ class CommentRepositoryImpl implements CommentRepository{
     public function publishComment($obj_comment){
         
     }
+    public function getCommentsByPostId($post_id){
+        try{
+            
+            $sql = "SELECT  * FROM comments WHERE post_id=$post_id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_OBJ);
+            echo "Select record successfully";
+            
+        }catch(PDOException $e) {
+            echo $sql . "<br>" . $e->getMessage();
+        }
+    }
 
 }
 // $comment = new CommentRepositoryImpl();

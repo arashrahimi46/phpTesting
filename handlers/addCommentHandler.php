@@ -12,6 +12,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $comment->post_id = "1";
     
     $commentRepositoryImpl->addComment($comment);
+    header("Location: http://localhost/phpTesting/single.php");
 
 }
 ?>

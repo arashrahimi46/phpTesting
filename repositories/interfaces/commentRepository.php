@@ -4,5 +4,6 @@ interface CommentRepository{
     public function deleteComment($obj_comment);
     public function editComment($obj_comment);
     public function publishComment($obj_comment);
+    public function getCommentsByPostId($post_id);
 }
 ?>
